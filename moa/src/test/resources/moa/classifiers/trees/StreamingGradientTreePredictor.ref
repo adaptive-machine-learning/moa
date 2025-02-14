@@ -1,0 +1,185 @@
+--> classification-out0.arff
+moa.classifiers.trees.StreamingGradientTreePredictor
+
+Index
+  10000
+Votes
+  0: 0.58241779
+  1: 0.41758221
+Measurements
+  classified instances: 9999
+  classifications correct (percent): 64.76647665
+  Kappa Statistic (percent): 27.2219368
+  Kappa Temporal Statistic (percent): 25.73777403
+  Kappa M Statistic (percent): 13.96825397
+Model measurements
+  model training instances: 9999
+  nodes: 20
+  splits: 5
+  node updates: 0
+  max depth: 4
+
+Index
+  20000
+Votes
+  0: 0.38092533
+  1: 0.61907467
+Measurements
+  classified instances: 19999
+  classifications correct (percent): 70.91854593
+  Kappa Statistic (percent): 39.48420441
+  Kappa Temporal Statistic (percent): 39.28385009
+  Kappa M Statistic (percent): 30.28050827
+Model measurements
+  model training instances: 19999
+  nodes: 34
+  splits: 9
+  node updates: 2
+  max depth: 4
+
+Index
+  30000
+Votes
+  0: 0.04442724
+  1: 0.95557276
+Measurements
+  classified instances: 29999
+  classifications correct (percent): 75.18250608
+  Kappa Statistic (percent): 48.36340202
+  Kappa Temporal Statistic (percent): 48.5735995
+  Kappa M Statistic (percent): 40.38276746
+Model measurements
+  model training instances: 29999
+  nodes: 78
+  splits: 25
+  node updates: 9
+  max depth: 5
+
+Index
+  40000
+Votes
+  0: 0.18708002
+  1: 0.81291998
+Measurements
+  classified instances: 39999
+  classifications correct (percent): 78.3719593
+  Kappa Statistic (percent): 55.12174951
+  Kappa Temporal Statistic (percent): 55.29430004
+  Kappa M Statistic (percent): 48.25956938
+Model measurements
+  model training instances: 39999
+  nodes: 89
+  splits: 29
+  node updates: 21
+  max depth: 5
+
+Index
+  50000
+Votes
+  0: 0.66226354
+  1: 0.33773646
+Measurements
+  classified instances: 49999
+  classifications correct (percent): 80.35360707
+  Kappa Statistic (percent): 59.25605659
+  Kappa Temporal Statistic (percent): 59.3385214
+  Kappa M Statistic (percent): 52.99100306
+Model measurements
+  model training instances: 49999
+  nodes: 101
+  splits: 35
+  node updates: 30
+  max depth: 5
+
+Index
+  60000
+Votes
+  0: 0.00480872
+  1: 0.99519128
+Measurements
+  classified instances: 59999
+  classifications correct (percent): 81.83469724
+  Kappa Statistic (percent): 62.37730905
+  Kappa Temporal Statistic (percent): 62.43667069
+  Kappa M Statistic (percent): 56.75343227
+Model measurements
+  model training instances: 59999
+  nodes: 123
+  splits: 46
+  node updates: 43
+  max depth: 5
+
+Index
+  70000
+Votes
+  0: 0.11916788
+  1: 0.88083212
+Measurements
+  classified instances: 69999
+  classifications correct (percent): 82.91118445
+  Kappa Statistic (percent): 64.62160021
+  Kappa Temporal Statistic (percent): 64.77517006
+  Kappa M Statistic (percent): 59.4563449
+Model measurements
+  model training instances: 69999
+  nodes: 125
+  splits: 47
+  node updates: 52
+  max depth: 5
+
+Index
+  80000
+Votes
+  0: 0.09335235
+  1: 0.90664765
+Measurements
+  classified instances: 79999
+  classifications correct (percent): 83.81979775
+  Kappa Statistic (percent): 66.48370359
+  Kappa Temporal Statistic (percent): 66.68125306
+  Kappa M Statistic (percent): 61.60873176
+Model measurements
+  model training instances: 79999
+  nodes: 157
+  splits: 60
+  node updates: 62
+  max depth: 5
+
+Index
+  90000
+Votes
+  0: 0.00894374
+  1: 0.99105626
+Measurements
+  classified instances: 89999
+  classifications correct (percent): 84.65649618
+  Kappa Statistic (percent): 68.20443598
+  Kappa Temporal Statistic (percent): 68.38960742
+  Kappa M Statistic (percent): 63.58386076
+Model measurements
+  model training instances: 89999
+  nodes: 174
+  splits: 67
+  node updates: 71
+  max depth: 6
+
+Index
+  100000
+Votes
+  0: 0.54380416
+  1: 0.45619584
+Measurements
+  classified instances: 99999
+  classifications correct (percent): 85.32885329
+  Kappa Statistic (percent): 69.60786824
+  Kappa Temporal Statistic (percent): 69.77793342
+  Kappa M Statistic (percent): 65.21976198
+Model measurements
+  model training instances: 99999
+  nodes: 185
+  splits: 71
+  node updates: 80
+  max depth: 6
+
+
+
