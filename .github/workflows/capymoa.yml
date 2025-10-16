@@ -23,7 +23,7 @@ jobs:
     - name: Package Jar
       working-directory: ./moa
       # Package as JAR while skipping tests, javadoc, and latex build
-      run: mvn package -DskipTests -Dmaven.javadoc.skip=true -Dlatex.skipBuild=true
+      run: mvn -B package -DskipTests -Dmaven.javadoc.skip=true -Dlatex.skipBuild=true
 
     # Upload jar file as artifact
     - name: Upload Jar
