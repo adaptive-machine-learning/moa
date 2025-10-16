@@ -1,7 +1,25 @@
+/*
+ *    Heros.java
+ *    Copyright (C) 2025 University of Waikato, Hamilton, New Zealand
+ *    @author Kirsten Köbschall (koebschall@uni-mainz.de)
+ *
+ *    This program is free software; you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation; either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package moa.classifiers.meta.heros;
 
 import com.github.javacliparser.*;
-
 import com.yahoo.labs.samoa.instances.Instance;
 import moa.capabilities.Capabilities;
 import moa.capabilities.CapabilitiesHandler;
@@ -42,7 +60,7 @@ import java.util.*;
  *  </ul>
  *
  * Reference (pre-print): <a href="url">https://arxiv.org/abs/2509.18962</a>
- *
+ *  @author Kirsten Köbschall (koebschall at uni dash mainz dot de)
  */
 
 public class Heros extends AbstractClassifier implements MultiClassClassifier, CapabilitiesHandler {

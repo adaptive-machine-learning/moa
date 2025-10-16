@@ -1,3 +1,22 @@
+/*
+ *    ZetaPolicy.java
+ *    Copyright (C) 2025 University of Waikato, Hamilton, New Zealand
+ *    @author Kirsten Köbschall (koebschall@uni-mainz.de)
+ *
+ *    This program is free software; you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation; either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 package moa.classifiers.meta.heros;
 
 import moa.classifiers.meta.heros.Heros.PoolItem;
@@ -11,6 +30,19 @@ import moa.core.ObjectRepository;
 import moa.options.AbstractOptionHandler;
 import moa.tasks.TaskMonitor;
 
+
+/**
+ * <b>ZetaPolicy </b><br>
+ *
+ * The zeta policy chooses the k models with lowest resource cost and at most $\zeta$
+ * worse in their estimated performance for training in Heros.
+
+ *  <p>Parameters:</p> <ul>
+ *      <li>-z : $\zeta$ parameter</li>
+ *  </ul>
+
+ *
+ */
 public class ZetaPolicy extends AbstractOptionHandler implements Policy {
 
     public FloatOption zetaOption = new FloatOption("zeta", 'z', "Maximum predictive performance loss to save resources while training.", 0.01, 0.0, 1.0);
