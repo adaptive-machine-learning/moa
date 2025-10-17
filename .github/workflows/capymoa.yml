@@ -20,6 +20,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Unit Tests
+      working-directory: ./moa
+      run: mvn -B test
+
     - name: Package Jar
       working-directory: ./moa
       # Package as JAR while skipping tests, javadoc, and latex build
