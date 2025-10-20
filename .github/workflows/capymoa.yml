@@ -26,17 +26,18 @@ jobs:
       working-directory: ./moa
       run: mvn -v
 
-    -  name: lscpu
-       run: lscpu
-
     - name: Unit Tests
       working-directory: ./moa
-      # Skip flakey tests 
-      run: mvn -B -q test -Dtest=\!MLPTest,\!SecondTestClass
+      # -B: non-interactive (batch) mode
+      # -q: quiet output
+      run: mvn -B -q test 
 
     - name: Package Jar
       working-directory: ./moa
-      # Package as JAR while skipping tests, javadoc, and latex build
+      # -B: non-interactive (batch) mode
+      # -DskipTests: skip tests (they were run earlier)
+      # -Dmaven.javadoc.skip=true: skip javadoc generation
+      # -Dlatex.skipBuild=true: skip latex documentation build this needs extra dependencies
       run: mvn -B package -DskipTests -Dmaven.javadoc.skip=true -Dlatex.skipBuild=true
 
     # Upload jar file as artifact
