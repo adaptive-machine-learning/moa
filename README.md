@@ -1,3 +1,46 @@
+# MOA (CapyMOA Edition)
+
+This is a fork of the [Waikato/moa](https://github.com/Waikato/moa) repository that is
+packaged with CapyMOA providing additional functionality to MOA and better integration
+with CapyMOA.
+
+A long term project goal is to merge all CapyMOA changes back into the upstream
+`Waikato/moa:master` branch. This will be an iterative process and much slower than
+CapyMOA development. For now, this fork exists to facilitate CapyMOA development without
+blocking on upstream MOA changes. Changes from this branch shall be cherry-picked into
+upstream MOA as appropriate. This fork shall then be rebased on-top of the latest MOA
+upstream changes periodically.
+
+To create a pull request into MOA CapyMOA edition branch, create a PR from your feature
+branch into `adaptive-machine-learning/moa:capymoa`:
+![CapyMOA](img/capymoa-pr.png)
+
+To build MOA for use with CapyMOA run:
+```bash
+cd moa
+mvn package -DskipTests -Dmaven.javadoc.skip=true -Dlatex.skipBuild=true
+```
+This will create a `target/moa-*-jar-with-dependencies.jar` file that can be used by
+CapyMOA. To let CapyMOA know where this file is, set the `CAPYMOA_MOA_JAR` environment
+variable to the path of this file.
+
+You can do this temporarily in your terminal session with:
+```bash
+export CAPYMOA_MOA_JAR=/path/to/moa/target/moa-*-jar-with-dependencies.jar
+```
+To check that CapyMOA can find MOA, run:
+```bash
+python -c "import capymoa; capymoa.about()"
+# CapyMOA 0.10.0
+#   CAPYMOA_DATASETS_DIR: .../datasets
+#   CAPYMOA_MOA_JAR:      .../moa/moa/target/moa-2024.07.2-SNAPSHOT-jar-with-dependencies.jar
+#   CAPYMOA_JVM_ARGS:     ['-Xmx8g', '-Xss10M']
+#   JAVA_HOME:            /usr/lib/jvm/java-21-openjdk
+#   MOA version:          aa955ebbcbd99e9e1d19ab16582e3e5a6fca5801ba250e4d164c16a89cf798ea
+#   JAVA version:         21.0.7
+```
+
+
 # MOA (Massive Online Analysis)
 [![Build Status](https://travis-ci.org/Waikato/moa.svg?branch=master)](https://travis-ci.org/Waikato/moa)
 [![Maven Central](https://img.shields.io/maven-central/v/nz.ac.waikato.cms.moa/moa-pom.svg)](https://mvnrepository.com/artifact/nz.ac.waikato.cms)
