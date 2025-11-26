@@ -81,7 +81,6 @@ public class ClustreamKernel extends CFCluster {
     public void insert( Instance instance, long timestamp ) {
         if(this.classObserver == null)
             this.classObserver = new double[instance.numClasses()];
-        System.out.println(instance.classIndex());
 
         if(this.instanceHasClass(instance)) {
             this.classObserver[(int)instance.classValue()]++;
