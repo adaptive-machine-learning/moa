@@ -19,40 +19,49 @@ import com.github.javacliparser.Option;
 /* test that all clusterers run, i.e., do not die on simpe input **/
 public class SimpleClusterTest extends TestCase {
 
-	final static String [] Clusterers = new String[]{"ClusterGenerator", "CobWeb", "KMeans", 
-		"clustream.Clustream", "clustree.ClusTree", "denstream.WithDBSCAN -i 1000", "streamkm.StreamKM"};
-	
-	@Test
-	public void testClusterGenerator(){testClusterer(Clusterers[0]);}
-//	@Test
-//	public void testCobWeb(){testClusterer(Clusterers[1]);}
-	@Test
-	public void testClustream(){testClusterer(Clusterers[3]);}
-	@Test
-	public void testClusTree(){testClusterer(Clusterers[4]);}
-	@Test
-	public void testDenStream(){testClusterer(Clusterers[5]);}
-	@Test
-	public void testStreamKM(){testClusterer(Clusterers[6]);}
-	
-	void testClusterer(String clusterer) {
-		System.out.println("Processing: " + clusterer);
-		try {
-			doTask(new String[]{"EvaluateClustering -l " + clusterer});
-		} catch (Exception e) {
-			assertTrue("Failed on clusterer " + clusterer + ": " + e.getMessage(), false);
-		}
-	}
-	
-	// code copied from moa.DoTask.main, to allow exceptions to be thrown in case of failure
-	public void doTask(String [] args) throws Exception {
+    final static String[] Clusterers = new String[] { "ClusterGenerator", "CobWeb", "KMeans",
+            "clustream.Clustream", "clustree.ClusTree", "denstream.WithDBSCAN -i 1000", "streamkm.StreamKM" };
+
+    @Test
+    public void testClusterGenerator() throws Exception {
+        testClusterer(Clusterers[0]);
+    }
+
+    @Test
+    public void testClustream() throws Exception {
+        testClusterer(Clusterers[3]);
+    }
+
+    @Test
+    public void testClusTree() throws Exception {
+        testClusterer(Clusterers[4]);
+    }
+
+    @Test
+    public void testDenStream() throws Exception {
+        testClusterer(Clusterers[5]);
+    }
+
+    @Test
+    public void testStreamKM() throws Exception {
+        testClusterer(Clusterers[6]);
+    }
+
+    void testClusterer(String clusterer) throws Exception {
+        System.out.println("Processing: " + clusterer);
+        doTask(new String[] { "EvaluateClustering -l " + clusterer });
+    }
+
+    // code copied from moa.DoTask.main, to allow exceptions to be thrown in case of
+    // failure
+    public void doTask(String[] args) throws Exception {
         if (args.length < 1) {
             System.out.println();
             System.out.println(Globals.getWorkbenchInfoString());
             System.out.println();
             System.out.println("No task specified.");
         } else {
-            if (moa.DoTask.isJavaVersionOK() == false ) {//|| moa.DoTask.isWekaVersionOK() == false) {
+            if (moa.DoTask.isJavaVersionOK() == false) {// || moa.DoTask.isWekaVersionOK() == false) {
                 return;
             }
             // create standard options
@@ -67,9 +76,9 @@ public class SimpleClusterTest extends TestCase {
                     'F',
                     "How many milliseconds to wait between status updates.",
                     1000, 0, Integer.MAX_VALUE);
-            Option[] extraOptions = new Option[]{
-                suppressStatusOutputOption, suppressResultOutputOption,
-                statusUpdateFrequencyOption};
+            Option[] extraOptions = new Option[] {
+                    suppressStatusOutputOption, suppressResultOutputOption,
+                    statusUpdateFrequencyOption };
             // build a single string by concatenating cli options
             StringBuilder cliString = new StringBuilder();
             for (int i = 0; i < args.length; i++) {
@@ -77,12 +86,11 @@ public class SimpleClusterTest extends TestCase {
             }
             // parse options
             Task task = (Task) ClassOption.cliStringToObject(cliString.toString(), Task.class, extraOptions);
-            
+
             StringBuilder sb = new StringBuilder();
             task.getDescription(sb, 4);
             System.out.println(sb.toString());
-            
-            
+
             Object result = null;
             if (suppressStatusOutputOption.isSet()) {
                 result = task.doTask();
@@ -117,7 +125,7 @@ public class SimpleClusterTest extends TestCase {
                     if (progressLine.length() > moa.DoTask.MAX_STATUS_STRING_LENGTH) {
                         progressLine.setLength(moa.DoTask.MAX_STATUS_STRING_LENGTH);
                         progressLine.setCharAt(
-                        		moa.DoTask.MAX_STATUS_STRING_LENGTH - 1, '~');
+                                moa.DoTask.MAX_STATUS_STRING_LENGTH - 1, '~');
                     }
                     System.out.print(progressLine.toString());
                     System.out.print('\r');
@@ -146,7 +154,7 @@ public class SimpleClusterTest extends TestCase {
                     System.out.println();
                 }
             }
-            
+
             if (result instanceof FailedTaskReport) {
                 System.out.println("Task failed. Reason: ");
                 ((FailedTaskReport) result).getFailureReason().printStackTrace();
@@ -166,6 +174,6 @@ public class SimpleClusterTest extends TestCase {
             }
         }
 
-	}
-	
+    }
+
 }
